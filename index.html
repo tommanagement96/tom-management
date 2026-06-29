@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOM Management — Business Never Stops.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --gold: #B8973A;
+      --gold-light: #D4AF5A;
+      --gold-pale: #F5EDD6;
+      --silver: #8A8E96;
+      --dark: #1A1A1A;
+      --mid: #4A4A4A;
+      --light: #F8F7F4;
+      --white: #FFFFFF;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4rem; border-bottom: 0.5px solid #E8E0CC; background: var(--white); position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 15px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark); }
+    .logo span { color: var(--gold); }
+    .btn-gold { font-size: 14px; padding: 10px 24px; background: var(--gold); color: #FFF; border-radius: 8px; cursor: pointer; border: none; font-family: 'Inter', sans-serif; font-weight: 500; transition: background 0.2s; }
+    .btn-gold:hover { background: var(--gold-light); }
+
+    /* HERO */
+    .hero { padding: 5rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .hero-tag { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--silver); margin-bottom: 1.2rem; }
+    .hero-title { font-size: 52px; font-weight: 600; line-height: 1.1; margin-bottom: 1.4rem; color: var(--dark); }
+    .hero-sub { font-size: 17px; color: var(--mid); line-height: 1.7; margin-bottom: 2rem; }
+
+    /* TERMINAL */
+    .terminal { background: #0F0F0F; border-radius: 12px; padding: 1.4rem 1.6rem; border: 0.5px solid #2A2A2A; }
+    .terminal-bar { display: flex; gap: 6px; margin-bottom: 1rem; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-r { background: #FF5F57; }
+    .dot-y { background: #FFBD2E; }
+    .dot-g { background: #28CA41; }
+    .terminal-line { font-family: 'Courier New', monospace; font-size: 13px; line-height: 2; }
+    .t-muted { color: #555; }
+    .t-gold { color: var(--gold-light); }
+    .t-green { color: #4EC94E; }
+    .t-white { color: #CCC; }
+    .cursor { display: inline-block; width: 8px; height: 14px; background: var(--gold); animation: blink 1s step-end infinite; vertical-align: middle; margin-left: 2px; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* AI CARDS */
+    .ai-cards { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+    .ai-card { background: var(--white); border: 0.5px solid #E8E0CC; border-radius: 8px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+    .ai-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .ai-text { font-size: 13px; color: var(--mid); flex: 1; }
+    .ai-text strong { color: var(--dark); font-weight: 500; }
+    .ai-time { font-size: 11px; color: #BBB; }
+
+    /* GOLD LINE */
+    .gold-line { height: 1px; background: linear-gradient(90deg, transparent, var(--gold-light), transparent); }
+
+    /* SECTIONS */
+    .section { padding: 5rem 4rem; max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .section-title { font-size: 32px; font-weight: 600; margin-bottom: 1rem; line-height: 1.3; color: var(--dark); }
+    .section-sub { font-size: 16px; color: var(--mid); line-height: 1.7; max-width: 560px; margin-bottom: 3rem; }
+    .divider { border: none; border-top: 0.5px solid #EDE5D0; }
+
+    /* PILLARS */
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .pillar { padding: 1.6rem; border: 0.5px solid #EDE5D0; border-radius: 12px; background: var(--light); }
+    .pillar i { font-size: 22px; color: var(--gold); margin-bottom: 1rem; display: block; }
+    .pillar h3 { font-size: 15px; font-weight: 500; margin-bottom: 0.4rem; }
+    .pillar p { font-size: 14px; color: var(--mid); line-height: 1.6; }
+
+    /* PRODUCTS */
+    .products { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+    .product-card { padding: 1.8rem; border: 0.5px solid #EDE5D0; border-radius: 12px; background: var(--light); transition: border-color 0.2s; }
+    .product-card:hover { border-color: var(--gold-light); }
+    .product-tag { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 4px; margin-bottom: 1rem; background: var(--gold-pale); color: var(--gold); border: 0.5px solid #D4AF5A55; letter-spacing: 0.06em; }
+    .product-card h3 { font-size: 16px; font-weight: 500; margin-bottom: 0.5rem; }
+    .product-card p { font-size: 14px; color: var(--mid); line-height: 1.65; }
+
+    /* PRICING */
+    .pricing-box { border: 1px solid var(--gold-light); border-radius: 12px; background: var(--gold-pale); padding: 3rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+    .pricing-box h3 { font-size: 24px; font-weight: 500; margin-bottom: 0.5rem; }
+    .pricing-box p { font-size: 16px; color: var(--mid); }
+
+    /* CTA */
+    .cta-section { padding: 6rem 4rem; text-align: center; background: var(--dark); }
+    .cta-section h2 { font-size: 36px; font-weight: 600; color: var(--white); margin-bottom: 1rem; }
+    .cta-section p { font-size: 17px; color: var(--silver); margin-bottom: 2.5rem; }
+    .cta-email { font-size: 14px; color: var(--gold); margin-top: 1.2rem; }
+
+    /* FOOTER */
+    footer { padding: 1.8rem 4rem; border-top: 0.5px solid #2A2A2A; display: flex; justify-content: space-between; align-items: center; background: var(--dark); }
+    footer p { font-size: 12px; color: var(--silver); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 2rem; }
+      .hero-title { font-size: 36px; }
+      .section { padding: 3rem 1.5rem; }
+      .pillars { grid-template-columns: 1fr; }
+      .products { grid-template-columns: 1fr; }
+      .pricing-box { flex-direction: column; text-align: center; }
+      .cta-section { padding: 4rem 1.5rem; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="logo">TOM <span>Management</span></span>
+  <button class="btn-gold" onclick="document.querySelector('.cta-section').scrollIntoView({behavior:'smooth'})">Contact us</button>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1200px; margin:0 auto;">
+  <div class="hero">
+    <div>
+      <p class="hero-tag">Technology Operations Management</p>
+      <h1 class="hero-title">Business<br>Never Stops.</h1>
+      <p class="hero-sub">We help businesses build AI systems that work 24/7 — so you don't have to.</p>
+      <button class="btn-gold" onclick="document.querySelector('.cta-section').scrollIntoView({behavior:'smooth'})">Get started</button>
+    </div>
+    <div>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+        </div>
+        <div class="terminal-line t-muted">// TOM Sales AI — running</div>
+        <div class="terminal-line t-white">&gt; Reading WhatsApp conversations...</div>
+        <div class="terminal-line t-green">&gt; 8 new customer profiles created ✓</div>
+        <div class="terminal-line t-white">&gt; Detecting sales intent...</div>
+        <div class="terminal-line t-gold">&gt; High intent: Farah, David, Mei Ling</div>
+        <div class="terminal-line t-green">&gt; Follow-up reminders sent ✓</div>
+        <div class="terminal-line t-white">&gt; Generating daily report...</div>
+        <div class="terminal-line t-green">&gt; Report ready — 3 deals to close today ✓</div>
+        <div class="terminal-line t-muted">&gt; <span class="cursor"></span></div>
+      </div>
+      <div class="ai-cards">
+        <div class="ai-card">
+          <div class="ai-dot"></div>
+          <div class="ai-text"><strong>New lead captured</strong> — Farah via WhatsApp</div>
+          <div class="ai-time">just now</div>
+        </div>
+        <div class="ai-card">
+          <div class="ai-dot"></div>
+          <div class="ai-text"><strong>Daily report ready</strong> — 3 deals to close</div>
+          <div class="ai-time">8:00 AM</div>
+        </div>
+        <div class="ai-card">
+          <div class="ai-dot"></div>
+          <div class="ai-text"><strong>CRM updated</strong> — 8 new profiles this week</div>
+          <div class="ai-time">yesterday</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gold-line"></div>
+
+<!-- WHAT WE DO -->
+<div style="background: var(--white);">
+  <div class="section">
+    <p class="section-label">What we do</p>
+    <h2 class="section-title">Your business runs on systems.<br>Tools won't build them for you.<br>We will.</h2>
+    <p class="section-sub">Most businesses don't have a marketing problem — they have a systems problem. TOM builds the AI infrastructure that runs your business.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <i class="ti ti-clock" aria-hidden="true"></i>
+        <h3>Save time</h3>
+        <p>Automate repetitive work so your team focuses on what matters.</p>
+      </div>
+      <div class="pillar">
+        <i class="ti ti-trending-up" aria-hidden="true"></i>
+        <h3>Make more money</h3>
+        <p>AI systems that never miss a follow-up or a sales opportunity.</p>
+      </div>
+      <div class="pillar">
+        <i class="ti ti-users" aria-hidden="true"></i>
+        <h3>Scale without hiring</h3>
+        <p>One person with the operational power of a full team.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<divider class="divider" style="display:block; border:none; border-top:0.5px solid #EDE5D0;"></divider>
+
+<!-- PRODUCTS -->
+<div style="background: var(--white);">
+  <div class="section">
+    <p class="section-label">Our products</p>
+    <h2 class="section-title">Four AI systems.<br>One business OS.</h2>
+    <p class="section-sub">Each product is a standalone AI system. Stack them as your business grows.</p>
+    <div class="products">
+      <div class="product-card">
+        <span class="product-tag">Sales</span>
+        <h3>TOM Sales AI</h3>
+        <p>Your AI sales secretary. Reads WhatsApp, builds your CRM automatically, and never lets a customer slip through.</p>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">Operations</span>
+        <h3>TOM Operations AI</h3>
+        <p>Turn your business data into daily decisions. Auto-reports, KPI tracking, and anomaly alerts.</p>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">Marketing</span>
+        <h3>TOM Marketing AI</h3>
+        <p>One person's content output, equal to a full team. Captions, campaigns, and multi-platform content.</p>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">Custom</span>
+        <h3>TOM AI Agents</h3>
+        <p>Custom AI systems built for your exact business flow. When one size doesn't fit all.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<divider class="divider" style="display:block; border:none; border-top:0.5px solid #EDE5D0;"></divider>
+
+<!-- PRICING -->
+<div style="background: var(--white);">
+  <div class="section">
+    <p class="section-label">Pricing</p>
+    <div class="pricing-box">
+      <div>
+        <h3>价格根据业务需求而定。</h3>
+        <p>联系我们获取专属方案。</p>
+      </div>
+      <button class="btn-gold" onclick="document.querySelector('.cta-section').scrollIntoView({behavior:'smooth'})">Contact us</button>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Ready to build your AI business system?</h2>
+  <p>Book a free consultation. No pressure, no commitment.</p>
+  <button class="btn-gold" onclick="window.location.href='mailto:tommanagement96@gmail.com'">Contact us</button>
+  <p class="cta-email">tommanagement96@gmail.com</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 TOM Management · Technology Operations Management</p>
+  <p>Malaysia</p>
+</footer>
+
+</body>
+</html>
