@@ -21,83 +21,69 @@
     }
     body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); }
 
-    /* NAV */
     nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4rem; border-bottom: 0.5px solid #E8E0CC; background: var(--white); position: sticky; top: 0; z-index: 100; }
     .logo { font-size: 15px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark); }
     .logo span { color: var(--gold); }
-    .btn-gold { font-size: 14px; padding: 10px 24px; background: var(--gold); color: #FFF; border-radius: 8px; cursor: pointer; border: none; font-family: 'Inter', sans-serif; font-weight: 500; transition: background 0.2s; }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .lang-toggle { display: flex; border: 0.5px solid #E8E0CC; border-radius: 8px; overflow: hidden; }
+    .lang-btn { font-size: 12px; padding: 6px 14px; background: transparent; border: none; cursor: pointer; font-family: 'Inter', sans-serif; color: var(--mid); transition: all 0.2s; }
+    .lang-btn.active { background: var(--gold); color: #FFF; font-weight: 500; }
+    .btn-gold { font-size: 14px; padding: 10px 24px; background: var(--gold); color: #FFF; border-radius: 8px; cursor: pointer; border: none; font-family: 'Inter', sans-serif; font-weight: 500; }
     .btn-gold:hover { background: var(--gold-light); }
 
-    /* HERO */
     .hero { padding: 5rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto; }
     .hero-tag { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--silver); margin-bottom: 1.2rem; }
     .hero-title { font-size: 52px; font-weight: 600; line-height: 1.1; margin-bottom: 1.4rem; color: var(--dark); }
     .hero-sub { font-size: 17px; color: var(--mid); line-height: 1.7; margin-bottom: 2rem; }
 
-    /* TERMINAL */
     .terminal { background: #0F0F0F; border-radius: 12px; padding: 1.4rem 1.6rem; border: 0.5px solid #2A2A2A; }
     .terminal-bar { display: flex; gap: 6px; margin-bottom: 1rem; }
     .dot { width: 10px; height: 10px; border-radius: 50%; }
-    .dot-r { background: #FF5F57; }
-    .dot-y { background: #FFBD2E; }
-    .dot-g { background: #28CA41; }
+    .dot-r { background: #FF5F57; } .dot-y { background: #FFBD2E; } .dot-g { background: #28CA41; }
     .terminal-line { font-family: 'Courier New', monospace; font-size: 13px; line-height: 2; }
-    .t-muted { color: #555; }
-    .t-gold { color: var(--gold-light); }
-    .t-green { color: #4EC94E; }
-    .t-white { color: #CCC; }
+    .t-muted { color: #555; } .t-gold { color: var(--gold-light); } .t-green { color: #4EC94E; } .t-white { color: #CCC; }
     .cursor { display: inline-block; width: 8px; height: 14px; background: var(--gold); animation: blink 1s step-end infinite; vertical-align: middle; margin-left: 2px; }
     @keyframes blink { 50% { opacity: 0; } }
 
-    /* AI CARDS */
     .ai-cards { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
-    .ai-card { background: var(--white); border: 0.5px solid #E8E0CC; border-radius: 8px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+    .ai-card { background: var(--white); border: 0.5px solid #E8E0CC; border-radius: 8px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; }
     .ai-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
     .ai-text { font-size: 13px; color: var(--mid); flex: 1; }
     .ai-text strong { color: var(--dark); font-weight: 500; }
     .ai-time { font-size: 11px; color: #BBB; }
 
-    /* GOLD LINE */
     .gold-line { height: 1px; background: linear-gradient(90deg, transparent, var(--gold-light), transparent); }
-
-    /* SECTIONS */
+    .divider { border: none; border-top: 0.5px solid #EDE5D0; }
     .section { padding: 5rem 4rem; max-width: 1200px; margin: 0 auto; }
     .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
-    .section-title { font-size: 32px; font-weight: 600; margin-bottom: 1rem; line-height: 1.3; color: var(--dark); }
+    .section-title { font-size: 32px; font-weight: 600; margin-bottom: 1rem; line-height: 1.3; }
     .section-sub { font-size: 16px; color: var(--mid); line-height: 1.7; max-width: 560px; margin-bottom: 3rem; }
-    .divider { border: none; border-top: 0.5px solid #EDE5D0; }
 
-    /* PILLARS */
     .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .pillar { padding: 1.6rem; border: 0.5px solid #EDE5D0; border-radius: 12px; background: var(--light); }
     .pillar i { font-size: 22px; color: var(--gold); margin-bottom: 1rem; display: block; }
     .pillar h3 { font-size: 15px; font-weight: 500; margin-bottom: 0.4rem; }
     .pillar p { font-size: 14px; color: var(--mid); line-height: 1.6; }
 
-    /* PRODUCTS */
     .products { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
     .product-card { padding: 1.8rem; border: 0.5px solid #EDE5D0; border-radius: 12px; background: var(--light); transition: border-color 0.2s; }
     .product-card:hover { border-color: var(--gold-light); }
-    .product-tag { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 4px; margin-bottom: 1rem; background: var(--gold-pale); color: var(--gold); border: 0.5px solid #D4AF5A55; letter-spacing: 0.06em; }
+    .product-tag { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 4px; margin-bottom: 1rem; background: var(--gold-pale); color: var(--gold); border: 0.5px solid #D4AF5A55; }
     .product-card h3 { font-size: 16px; font-weight: 500; margin-bottom: 0.5rem; }
     .product-card p { font-size: 14px; color: var(--mid); line-height: 1.65; }
 
-    /* PRICING */
     .pricing-box { border: 1px solid var(--gold-light); border-radius: 12px; background: var(--gold-pale); padding: 3rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
     .pricing-box h3 { font-size: 24px; font-weight: 500; margin-bottom: 0.5rem; }
     .pricing-box p { font-size: 16px; color: var(--mid); }
 
-    /* CTA */
     .cta-section { padding: 6rem 4rem; text-align: center; background: var(--dark); }
     .cta-section h2 { font-size: 36px; font-weight: 600; color: var(--white); margin-bottom: 1rem; }
     .cta-section p { font-size: 17px; color: var(--silver); margin-bottom: 2.5rem; }
     .cta-email { font-size: 14px; color: var(--gold); margin-top: 1.2rem; }
 
-    /* FOOTER */
-    footer { padding: 1.8rem 4rem; border-top: 0.5px solid #2A2A2A; display: flex; justify-content: space-between; align-items: center; background: var(--dark); }
+    footer { padding: 1.8rem 4rem; border-top: 0.5px solid #2A2A2A; display: flex; justify-content: space-between; background: var(--dark); }
     footer p { font-size: 12px; color: var(--silver); }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 2rem; }
@@ -107,33 +93,35 @@
       .products { grid-template-columns: 1fr; }
       .pricing-box { flex-direction: column; text-align: center; }
       .cta-section { padding: 4rem 1.5rem; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+      footer { flex-direction: column; gap: 0.5rem; padding: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <span class="logo">TOM <span>Management</span></span>
-  <button class="btn-gold" onclick="document.querySelector('.cta-section').scrollIntoView({behavior:'smooth'})">Contact us</button>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('zh')">中文</button>
+    </div>
+    <button class="btn-gold" onclick="document.querySelector('.cta-section').scrollIntoView({behavior:'smooth'})" data-en="Contact us" data-zh="联系我们">Contact us</button>
+  </div>
 </nav>
 
-<!-- HERO -->
 <div style="max-width:1200px; margin:0 auto;">
   <div class="hero">
     <div>
-      <p class="hero-tag">Technology Operations Management</p>
-      <h1 class="hero-title">Business<br>Never Stops.</h1>
-      <p class="hero-sub">We help businesses build AI systems that work 24/7 — so you don't have to.</p>
-      <button class="btn-gold" onclick="document.querySelector('.cta-section').scrollIntoView({behavior:'smooth'})">Get started</button>
+      <p class="hero-tag" data-en="Technology Operations Management" data-zh="科技运营管理">Technology Operations Management</p>
+      <h1 class="hero-title" data-en="Business<br>Never Stops." data-zh="业务，<br>从不休息。">Business<br>Never Stops.</h1>
+      <p class="hero-sub" data-en="We help businesses build AI systems that work 24/7 — so you don't have to." data-zh="我们帮助企业建立全天候运作的 AI 系统——让老板专注在真正重要的事。">We help businesses build AI systems that work 24/7 — so you don't have to.</p>
+      <button class="btn-gold" onclick="document.querySelector('.cta-section').scrollIntoView({behavior:'smooth'})" data-en="Get started" data-zh="立即开始">Get started</button>
     </div>
     <div>
       <div class="terminal">
         <div class="terminal-bar">
-          <div class="dot dot-r"></div>
-          <div class="dot dot-y"></div>
-          <div class="dot dot-g"></div>
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
         </div>
         <div class="terminal-line t-muted">// TOM Sales AI — running</div>
         <div class="terminal-line t-white">&gt; Reading WhatsApp conversations...</div>
@@ -148,18 +136,18 @@
       <div class="ai-cards">
         <div class="ai-card">
           <div class="ai-dot"></div>
-          <div class="ai-text"><strong>New lead captured</strong> — Farah via WhatsApp</div>
-          <div class="ai-time">just now</div>
+          <div class="ai-text"><strong data-en="New lead captured" data-zh="新客户已捕获">New lead captured</strong> — <span data-en="Farah via WhatsApp" data-zh="Farah 通过 WhatsApp">Farah via WhatsApp</span></div>
+          <div class="ai-time" data-en="just now" data-zh="刚刚">just now</div>
         </div>
         <div class="ai-card">
           <div class="ai-dot"></div>
-          <div class="ai-text"><strong>Daily report ready</strong> — 3 deals to close</div>
+          <div class="ai-text"><strong data-en="Daily report ready" data-zh="每日报告已生成">Daily report ready</strong> — <span data-en="3 deals to close" data-zh="3个客户待跟进">3 deals to close</span></div>
           <div class="ai-time">8:00 AM</div>
         </div>
         <div class="ai-card">
           <div class="ai-dot"></div>
-          <div class="ai-text"><strong>CRM updated</strong> — 8 new profiles this week</div>
-          <div class="ai-time">yesterday</div>
+          <div class="ai-text"><strong data-en="CRM updated" data-zh="CRM 已更新">CRM updated</strong> — <span data-en="8 new profiles this week" data-zh="本周新增 8 个客户档案">8 new profiles this week</span></div>
+          <div class="ai-time" data-en="yesterday" data-zh="昨天">yesterday</div>
         </div>
       </div>
     </div>
@@ -168,94 +156,100 @@
 
 <div class="gold-line"></div>
 
-<!-- WHAT WE DO -->
 <div style="background: var(--white);">
   <div class="section">
-    <p class="section-label">What we do</p>
-    <h2 class="section-title">Your business runs on systems.<br>Tools won't build them for you.<br>We will.</h2>
-    <p class="section-sub">Most businesses don't have a marketing problem — they have a systems problem. TOM builds the AI infrastructure that runs your business.</p>
+    <p class="section-label" data-en="What we do" data-zh="我们做什么">What we do</p>
+    <h2 class="section-title" data-en="Your business runs on systems.<br>Tools won't build them for you.<br>We will." data-zh="企业靠系统运作。<br>工具做不到这件事。<br>我们来做。">Your business runs on systems.<br>Tools won't build them for you.<br>We will.</h2>
+    <p class="section-sub" data-en="Most businesses don't have a marketing problem — they have a systems problem. TOM builds the AI infrastructure that runs your business." data-zh="大多数企业没有营销问题——他们有运营系统的问题。TOM 为你的企业建立 AI 基础架构。">Most businesses don't have a marketing problem — they have a systems problem. TOM builds the AI infrastructure that runs your business.</p>
     <div class="pillars">
       <div class="pillar">
         <i class="ti ti-clock" aria-hidden="true"></i>
-        <h3>Save time</h3>
-        <p>Automate repetitive work so your team focuses on what matters.</p>
+        <h3 data-en="Save time" data-zh="节省时间">Save time</h3>
+        <p data-en="Automate repetitive work so your team focuses on what matters." data-zh="自动化重复工作，让你的团队专注在真正重要的事。">Automate repetitive work so your team focuses on what matters.</p>
       </div>
       <div class="pillar">
         <i class="ti ti-trending-up" aria-hidden="true"></i>
-        <h3>Make more money</h3>
-        <p>AI systems that never miss a follow-up or a sales opportunity.</p>
+        <h3 data-en="Make more money" data-zh="赚更多钱">Make more money</h3>
+        <p data-en="AI systems that never miss a follow-up or a sales opportunity." data-zh="AI 系统永远不会漏掉一次跟进或销售机会。">AI systems that never miss a follow-up or a sales opportunity.</p>
       </div>
       <div class="pillar">
         <i class="ti ti-users" aria-hidden="true"></i>
-        <h3>Scale without hiring</h3>
-        <p>One person with the operational power of a full team.</p>
+        <h3 data-en="Scale without hiring" data-zh="不招人也能扩张">Scale without hiring</h3>
+        <p data-en="One person with the operational power of a full team." data-zh="一个人拥有整支团队的运营能力。">One person with the operational power of a full team.</p>
       </div>
     </div>
   </div>
 </div>
 
-<divider class="divider" style="display:block; border:none; border-top:0.5px solid #EDE5D0;"></divider>
+<hr class="divider">
 
-<!-- PRODUCTS -->
 <div style="background: var(--white);">
   <div class="section">
-    <p class="section-label">Our products</p>
-    <h2 class="section-title">Four AI systems.<br>One business OS.</h2>
-    <p class="section-sub">Each product is a standalone AI system. Stack them as your business grows.</p>
+    <p class="section-label" data-en="Our products" data-zh="我们的产品">Our products</p>
+    <h2 class="section-title" data-en="Four AI systems.<br>One business OS." data-zh="四大 AI 系统。<br>一套业务操作系统。">Four AI systems.<br>One business OS.</h2>
+    <p class="section-sub" data-en="Each product is a standalone AI system. Stack them as your business grows." data-zh="每个产品都是独立的 AI 系统，随业务增长自由组合。">Each product is a standalone AI system. Stack them as your business grows.</p>
     <div class="products">
       <div class="product-card">
-        <span class="product-tag">Sales</span>
+        <span class="product-tag" data-en="Sales" data-zh="销售">Sales</span>
         <h3>TOM Sales AI</h3>
-        <p>Your AI sales secretary. Reads WhatsApp, builds your CRM automatically, and never lets a customer slip through.</p>
+        <p data-en="Your AI sales secretary. Reads WhatsApp, builds your CRM automatically, and never lets a customer slip through." data-zh="你的 AI 销售秘书。读取 WhatsApp，自动建立客户档案，绝不漏掉任何一位客户。">Your AI sales secretary. Reads WhatsApp, builds your CRM automatically, and never lets a customer slip through.</p>
       </div>
       <div class="product-card">
-        <span class="product-tag">Operations</span>
+        <span class="product-tag" data-en="Operations" data-zh="运营">Operations</span>
         <h3>TOM Operations AI</h3>
-        <p>Turn your business data into daily decisions. Auto-reports, KPI tracking, and anomaly alerts.</p>
+        <p data-en="Turn your business data into daily decisions. Auto-reports, KPI tracking, and anomaly alerts." data-zh="把业务数据转化为每日决策。自动报表、KPI 追踪、异常警报。">Turn your business data into daily decisions. Auto-reports, KPI tracking, and anomaly alerts.</p>
       </div>
       <div class="product-card">
-        <span class="product-tag">Marketing</span>
+        <span class="product-tag" data-en="Marketing" data-zh="营销">Marketing</span>
         <h3>TOM Marketing AI</h3>
-        <p>One person's content output, equal to a full team. Captions, campaigns, and multi-platform content.</p>
+        <p data-en="One person's content output, equal to a full team. Captions, campaigns, and multi-platform content." data-zh="一个人的内容产能，等于整支团队。文案、Campaign、多平台内容一键生成。">One person's content output, equal to a full team. Captions, campaigns, and multi-platform content.</p>
       </div>
       <div class="product-card">
-        <span class="product-tag">Custom</span>
+        <span class="product-tag" data-en="Custom" data-zh="定制">Custom</span>
         <h3>TOM AI Agents</h3>
-        <p>Custom AI systems built for your exact business flow. When one size doesn't fit all.</p>
+        <p data-en="Custom AI systems built for your exact business flow. When one size doesn't fit all." data-zh="根据你的业务流程定制的 AI 系统。一刀切的方案不适合你时，就交给我们。">Custom AI systems built for your exact business flow. When one size doesn't fit all.</p>
       </div>
     </div>
   </div>
 </div>
 
-<divider class="divider" style="display:block; border:none; border-top:0.5px solid #EDE5D0;"></divider>
+<hr class="divider">
 
-<!-- PRICING -->
 <div style="background: var(--white);">
   <div class="section">
-    <p class="section-label">Pricing</p>
+    <p class="section-label" data-en="Pricing" data-zh="收费">Pricing</p>
     <div class="pricing-box">
       <div>
-        <h3>Pricing is tailored to your business.</h3>
-        <p>Contact us for a custom quote.</p>
+        <h3 data-en="Pricing is tailored to your business." data-zh="价格根据业务需求而定。">Pricing is tailored to your business.</h3>
+        <p data-en="Contact us for a custom quote." data-zh="联系我们获取专属方案。">Contact us for a custom quote.</p>
       </div>
-      <button class="btn-gold" onclick="document.querySelector('.cta-section').scrollIntoView({behavior:'smooth'})">Contact us</button>
+      <button class="btn-gold" onclick="document.querySelector('.cta-section').scrollIntoView({behavior:'smooth'})" data-en="Contact us" data-zh="联系我们">Contact us</button>
     </div>
   </div>
 </div>
 
-<!-- CTA -->
 <div class="cta-section">
-  <h2>Ready to build your AI business system?</h2>
-  <p>Book a free consultation. No pressure, no commitment.</p>
-  <button class="btn-gold" onclick="window.location.href='mailto:tommanagement96@gmail.com'">Contact us</button>
+  <h2 data-en="Ready to build your AI business system?" data-zh="准备好建立你的 AI 业务系统了吗？">Ready to build your AI business system?</h2>
+  <p data-en="Book a free consultation. No pressure, no commitment." data-zh="预约免费咨询。没有压力，没有承诺。">Book a free consultation. No pressure, no commitment.</p>
+  <button class="btn-gold" onclick="window.location.href='mailto:tommanagement96@gmail.com'" data-en="Contact us" data-zh="联系我们">Contact us</button>
   <p class="cta-email">tommanagement96@gmail.com</p>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2026 TOM Management · Technology Operations Management</p>
   <p>Malaysia</p>
 </footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const text = el.getAttribute('data-' + lang);
+      if (text) el.innerHTML = text;
+    });
+  }
+</script>
 
 </body>
 </html>
