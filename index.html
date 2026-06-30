@@ -128,14 +128,7 @@
         <div class="terminal-bar">
           <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
         </div>
-        <div class="terminal-line t-muted">// TOM Sales AI — running</div>
-        <div class="terminal-line t-white">&gt; Reading WhatsApp conversations...</div>
-        <div class="terminal-line t-green">&gt; 8 new customer profiles created ✓</div>
-        <div class="terminal-line t-white">&gt; Detecting sales intent...</div>
-        <div class="terminal-line t-gold">&gt; High intent: Siti, Thomas, Xiao Ming</div>
-        <div class="terminal-line t-green">&gt; Follow-up reminders sent ✓</div>
-        <div class="terminal-line t-white">&gt; Generating daily report...</div>
-        <div class="terminal-line t-green">&gt; Report ready — 3 deals to close today ✓</div>
+        <div id="terminal-output"></div>
         <div class="terminal-line t-muted">&gt; <span class="cursor"></span></div>
       </div>
       <div class="ai-cards">
@@ -254,6 +247,56 @@
       if (text) el.innerHTML = text;
     });
   }
+
+  // Terminal typewriter
+  const lines = [
+    { text: '// TOM Sales AI — running', cls: 't-muted', delay: 0 },
+    { text: '> Reading WhatsApp conversations...', cls: 't-white', delay: 600 },
+    { text: '> 8 new customer profiles created ✓', cls: 't-green', delay: 1400 },
+    { text: '> Detecting sales intent...', cls: 't-white', delay: 2200 },
+    { text: '> High intent: Siti, Thomas, Xiao Ming', cls: 't-gold', delay: 3000 },
+    { text: '> Follow-up reminders sent ✓', cls: 't-green', delay: 3900 },
+    { text: '> Generating daily report...', cls: 't-white', delay: 4700 },
+    { text: '> Report ready — 3 deals to close today ✓', cls: 't-green', delay: 5500 },
+  ];
+
+  function typeLine(container, text, cls, callback) {
+    const div = document.createElement('div');
+    div.className = 'terminal-line ' + cls;
+    container.appendChild(div);
+    let i = 0;
+    const interval = setInterval(() => {
+      div.textContent += text[i];
+      i++;
+      if (i >= text.length) {
+        clearInterval(interval);
+        if (callback) callback();
+      }
+    }, 28);
+  }
+
+  function runTerminal() {
+    const output = document.getElementById('terminal-output');
+    output.innerHTML = '';
+    let idx = 0;
+    function next() {
+      if (idx >= lines.length) {
+        setTimeout(runTerminal, 2000);
+        return;
+      }
+      const line = lines[idx++];
+      setTimeout(() => typeLine(output, line.text, line.cls, next), idx === 1 ? 0 : 0);
+    }
+    // schedule each line by its delay
+    lines.forEach((line, i) => {
+      setTimeout(() => {
+        typeLine(output, line.text, line.cls, null);
+        if (i === lines.length - 1) setTimeout(runTerminal, 3000);
+      }, line.delay);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', () => setTimeout(runTerminal, 500));
 </script>
 
 </body>
