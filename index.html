@@ -69,9 +69,26 @@
     .products { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
     .product-card { padding: 1.8rem; border: 0.5px solid #EDE5D0; border-radius: 12px; background: var(--light); transition: border-color 0.2s; }
     .product-card:hover { border-color: var(--gold-light); }
-    .product-tag { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 4px; margin-bottom: 1rem; background: var(--gold-pale); color: var(--gold); border: 0.5px solid #D4AF5A55; }
-    .product-card h3 { font-size: 16px; font-weight: 500; margin-bottom: 0.5rem; }
-    .product-card p { font-size: 14px; color: var(--mid); line-height: 1.65; }
+    .product-tag { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; padding: 4px 12px; border-radius: 4px; margin-bottom: 1rem; background: var(--gold-pale); color: var(--gold); border: 0.5px solid #D4AF5A55; text-transform: uppercase; }
+    .product-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 0.2rem; }
+    .product-role { font-size: 12px; color: var(--gold); margin-bottom: 0.6rem; }
+    .product-card > p { font-size: 15px; color: var(--mid); line-height: 1.7; margin-bottom: 1.2rem; }
+    .ba-table { margin-top: 2rem; border: 0.5px solid #EDE5D0; border-radius: 12px; overflow: hidden; }
+    .ba-table-header { display: grid; grid-template-columns: 1.2fr 2fr 2fr; background: var(--light); padding: 0.7rem 1.2rem; gap: 1rem; border-bottom: 0.5px solid #EDE5D0; }
+    .ba-col-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; }
+    .before-col { color: #999; }
+    .after-col { color: var(--gold); }
+    .ba-table-row { display: grid; grid-template-columns: 1.2fr 2fr 2fr; padding: 1rem 1.2rem; gap: 1rem; border-top: 0.5px solid #EDE5D0; align-items: start; }
+    .ba-table-row:nth-child(even) { background: #FAFAF8; }
+    .ba-product-name { font-size: 13px; font-weight: 600; color: var(--dark); }
+    .ba-before-text { font-size: 13px; color: #999; line-height: 1.6; }
+    .ba-after-text { font-size: 13px; color: var(--dark); line-height: 1.6; font-weight: 500; }
+    @media (max-width: 768px) {
+      .ba-table-header { grid-template-columns: 1fr 1fr; }
+      .ba-table-header > div:first-child { display: none; }
+      .ba-table-row { grid-template-columns: 1fr 1fr; }
+      .ba-product-name { grid-column: 1 / -1; font-size: 12px; margin-bottom: 0.2rem; color: var(--gold); }
+    }
 
     .pricing-box { border: 1px solid var(--gold-light); border-radius: 12px; background: var(--gold-pale); padding: 3rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
     .pricing-box h3 { font-size: 24px; font-weight: 500; margin-bottom: 0.5rem; }
@@ -191,22 +208,54 @@
       <div class="product-card">
         <span class="product-tag" data-en="Sales" data-zh="销售">Sales</span>
         <h3>TOM Sales AI</h3>
-        <p data-en="Your sales secretary. Reads WhatsApp, builds customer profiles, suggests replies, and reminds you to follow up — so every customer has someone looking after them." data-zh="你的销售秘书。自动整理 WhatsApp、建立客户档案、建议回复、提醒跟进，让每一位客户都有人负责。">Your sales secretary. Reads WhatsApp, builds customer profiles, suggests replies, and reminds you to follow up — so every customer has someone looking after them.</p>
+        <p class="product-role" data-en="AI Sales Secretary" data-zh="AI 销售秘书">AI Sales Secretary</p>
+        <p data-en="Customers message you, but you get busy and forget to reply. The system tracks WhatsApp leads, organizes customer progress, reminds follow-ups, and suggests what to say next." data-zh="客户传了消息，你忙着忙着就忘了回。系统自动记录 WhatsApp 客户、整理客户进度、提醒 Follow Up，并建议你怎么回复。">Customers message you, but you get busy and forget to reply. The system tracks WhatsApp leads, organizes customer progress, reminds follow-ups, and suggests what to say next.</p>
       </div>
       <div class="product-card">
         <span class="product-tag" data-en="Operations" data-zh="运营">Operations</span>
         <h3>TOM Operations AI</h3>
-        <p data-en="Your daily business briefing. Auto-reports, KPI tracking, anomaly alerts — so you always know what matters most today." data-zh="每天整理业务重点。自动报表、KPI、异常提醒、营运分析，让老板每天知道最重要的事。">Your daily business briefing. Auto-reports, KPI tracking, anomaly alerts — so you always know what matters most today.</p>
+        <p class="product-role" data-en="AI Operations Assistant" data-zh="AI 营运助理">AI Operations Assistant</p>
+        <p data-en="Your numbers are everywhere, so decisions depend on gut feel. The system prepares daily reports, tracks key numbers, flags issues, and shows where the business is stuck." data-zh="数据散落各处，老板只能靠感觉做决定。系统每天整理关键数字、生成营运报告、提醒异常，让你清楚知道公司哪里卡住。">Your numbers are everywhere, so decisions depend on gut feel. The system prepares daily reports, tracks key numbers, flags issues, and shows where the business is stuck.</p>
       </div>
       <div class="product-card">
         <span class="product-tag" data-en="Marketing" data-zh="营销">Marketing</span>
         <h3>TOM Marketing AI</h3>
-        <p data-en="From idea to publish. Content planning, copywriting, campaigns, social content — all handled, so you never stare at a blank page again." data-zh="内容规划、文案、Campaign、社群内容，从灵感到发布，全部交给系统协作完成。">From idea to publish. Content planning, copywriting, campaigns, social content — all handled, so you never stare at a blank page again.</p>
+        <p class="product-role" data-en="AI Content Team" data-zh="AI 内容团队">AI Content Team</p>
+        <p data-en="Content takes time. You post when you remember, and the brand slowly goes quiet. The system helps plan content, write captions, organize campaigns, and keep your brand showing up." data-zh="写内容花时间，想到才发，账号慢慢安静。系统协助规划内容、撰写文案、整理 Campaign，让品牌持续出现。">Content takes time. You post when you remember, and the brand slowly goes quiet. The system helps plan content, write captions, organize campaigns, and keep your brand showing up.</p>
       </div>
       <div class="product-card">
         <span class="product-tag" data-en="Custom" data-zh="定制">Custom</span>
         <h3>TOM AI Agents</h3>
-        <p data-en="Every business runs differently. We build systems designed around your exact workflow — not a template, but something built for you." data-zh="每间企业都有不同流程。我们替你打造真正符合业务的系统。不是套模板，而是建立属于你的工作方式。">Every business runs differently. We build systems designed around your exact workflow — not a template, but something built for you.</p>
+        <p class="product-role" data-en="Custom AI Employee" data-zh="专属 AI 员工">Custom AI Employee</p>
+        <p data-en="Your business has its own workflow. Off-the-shelf tools never quite fit. We build AI systems around how you actually work, so AI can participate in real business operations." data-zh="你的业务有自己的流程，现成工具总是差一点。我们按照你的实际工作方式，打造真正能参与业务的 AI 系统。">Your business has its own workflow. Off-the-shelf tools never quite fit. We build AI systems around how you actually work, so AI can participate in real business operations.</p>
+      </div>
+    </div>
+
+    <div class="ba-table">
+      <div class="ba-table-header">
+        <div></div>
+        <div class="ba-col-label before-col" data-en="WITHOUT TOM AI" data-zh="没有 TOM AI">WITHOUT TOM AI</div>
+        <div class="ba-col-label after-col" data-en="WITH TOM AI" data-zh="有了 TOM AI">WITH TOM AI</div>
+      </div>
+      <div class="ba-table-row">
+        <div class="ba-product-name">TOM Sales AI</div>
+        <div class="ba-before-text" data-en="The more chats you have, the more customers you deal with. Eventually, you're the only one keeping track of everyone's situation." data-zh="聊天越来越多，客户越来越多。到最后，只能靠自己记住每一个人的情况。">聊天越来越多，客户越来越多。到最后，只能靠自己记住每一个人的情况。</div>
+        <div class="ba-after-text" data-en="Customer profiles built automatically, with chat highlights organized. Reminders on when to follow up, and suggestions on how to reply." data-zh="自动建立客户档案，整理聊天重点。提醒什么时候该跟进，并建议你怎么回复。">自动建立客户档案，整理聊天重点。提醒什么时候该跟进，并建议你怎么回复。</div>
+      </div>
+      <div class="ba-table-row">
+        <div class="ba-product-name">TOM Operations AI</div>
+        <div class="ba-before-text" data-en="Every day starts with hunting through Excel, WhatsApp, and Google Sheets. By the time you spot a problem, time has been wasted and revenue already lost." data-zh="每天打开 Excel、WhatsApp、Google Sheet 到处找资料。等发现问题的时候，通常已经浪费了时间，也损失了收入。">每天打开 Excel、WhatsApp、Google Sheet 到处找资料。等发现问题的时候，通常已经浪费了时间，也损失了收入。</div>
+        <div class="ba-after-text" data-en="A business summary is prepared for you every day. Key numbers, unusual changes, and pending items — all in one place." data-zh="每天自动整理一份营运报告。关键数字、异常变化、待处理事项，一眼就知道。">每天自动整理一份营运报告。关键数字、异常变化、待处理事项，一眼就知道。</div>
+      </div>
+      <div class="ba-table-row">
+        <div class="ba-product-name">TOM Marketing AI</div>
+        <div class="ba-before-text" data-en="You know you should post, but you don't know what. When things get busy, you stop. Customers slowly forget your brand exists." data-zh="每天都知道应该发内容，却不知道发什么。想到才发，忙起来就停更，客户慢慢忘记你的品牌。">每天都知道应该发内容，却不知道发什么。想到才发，忙起来就停更，客户慢慢忘记你的品牌。</div>
+        <div class="ba-after-text" data-en="Topics, captions, and a posting schedule — all planned in one go. Your brand stays visible without starting from scratch every day." data-zh="内容主题、文案、发布计划一次整理好。品牌持续曝光，不需要每天重新开始想。">内容主题、文案、发布计划一次整理好。品牌持续曝光，不需要每天重新开始想。</div>
+      </div>
+      <div class="ba-table-row">
+        <div class="ba-product-name">TOM AI Agents</div>
+        <div class="ba-before-text" data-en="You bought tools, but you're still doing everything manually. Each department runs on a different system. Data is scattered. Things keep getting messier." data-zh="买了很多工具，却还是要自己做。每个部门各用各的系统，资料分散，事情越做越乱。">买了很多工具，却还是要自己做。每个部门各用各的系统，资料分散，事情越做越乱。</div>
+        <div class="ba-after-text" data-en="A system built around your actual workflow. Data connects automatically, processes run on their own — so the work gets done without you having to push it." data-zh="按照你的业务流程打造专属系统。资料自动串联、流程自动协作，让系统真正参与每天的工作。">按照你的业务流程打造专属系统。资料自动串联、流程自动协作，让系统真正参与每天的工作。</div>
       </div>
     </div>
   </div>
